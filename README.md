@@ -9,4 +9,5 @@ The first step is program a model that can do facial recognition. Here, we will 
 
 ## Logs
 [ 2025/05/12 ] -> Creation of REPO
+
 [ 2025/05/19 ] -> First Steps
