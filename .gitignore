@@ -1,10 +1,16 @@
 # Byte-compiled / optimized / DLL files
+lfw-funneled.tgz
+pairs.txt
+pairsDevTest.txt
+pairsDevTrain.txt
+
 __pycache__/
 *.py[cod]
 *$py.class
 
 # C extensions
 *.so
+
 
 # Distribution / packaging
 .Python
