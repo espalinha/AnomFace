@@ -1,0 +1,4 @@
+train: /mnt/47b57003-8c39-48f1-9fb1-f6186c259957/datasets/AnomFace/dataset/images/train
+val: /mnt/47b57003-8c39-48f1-9fb1-f6186c259957/datasets/AnomFace/dataset/images/val
+nc: 1
+names: ['face']

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Running first test
+echo "First Test: Running YOLO"
+python3 -m src.test.yolo
+
