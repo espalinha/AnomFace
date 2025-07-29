@@ -10,6 +10,8 @@ __pycache__/
 
 # C extensions
 *.so
+runs
+model_predicts
 
 
 # Distribution / packaging

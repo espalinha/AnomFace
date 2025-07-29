@@ -19,7 +19,7 @@ def clean_yaml():
     pass
 
 def main():
-    model = YOLO("yolov8n.pt")
+    model = YOLO("yolov8l.pt")
     res = model.train(
         data = 'config.yaml',
         epochs = 100,
