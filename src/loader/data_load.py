@@ -39,6 +39,8 @@ class WiderFaceDataset(Dataset):
         dotenv.load_dotenv()
         img_path = os.getenv("TRAIN")
         anom_path = os.getenv("TRAIN_ANNOT")
+        #img_path = os.getenv("TRAIN_YOLO")
+        #anom_path = os.getenv("TRAIN_ANNOT_YOLO")
         self.img_path = img_path
         self.anom_path = anom_path
         self.img_files = [f for f in os.listdir(self.img_path) if f.endswith('.jpg')]

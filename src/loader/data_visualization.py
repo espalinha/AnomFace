@@ -35,7 +35,7 @@ def main(type="train"):
         tensors, pil_images, names, boxes_list = batch
         
         for tensor, pil_img, name, boxes in zip(tensors, pil_images, names, boxes_list):
-            if random() > 0.95:
+            if random() > 0.97:
                 
                 image_with_boxes = draw_boxes(pil_img, boxes)
                 image_with_boxes.show()

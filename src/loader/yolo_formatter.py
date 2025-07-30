@@ -67,12 +67,14 @@ def annotations_to_yolo_format(boxes_struct: BoxesStruct, name):
     yolo_boxes = []
    
     #print(boxes)
+
     for box in boxes:
+        x = float(box[0])
+        y = float(box[1])
         w = float(box[2])
         h = float(box[3])
-        #print(h)
-        x_center = ((float(box[0]) + w) / 2)/img_w
-        y_center = ((float(box[1]) + h) / 2)/img_h
+        x_center = (x + w/2) / img_w
+        y_center = (y + h/2) / img_h
         yolo_boxes.append([x_center, y_center, w/img_w, h/img_h])
     return yolo_boxes
 """
