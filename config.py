@@ -16,6 +16,8 @@ def dotenv_yolo(path):
     with open("./src/yolo/.env", "w") as f:
         f.write(f"PATH_={os.path.join(path, 'dataset')}")
 
+def dotenv_plates(path):
+    pass
 
 def main():
     path = sys.argv[1] if len(sys.argv) > 1 else "data"

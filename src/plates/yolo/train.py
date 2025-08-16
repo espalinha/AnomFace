@@ -1,9 +1,12 @@
-import dotenv
+from dotenv import load_dotenv
 import os
+import torchvision.transforms as T
+from src.plates.yolo.red_filter import RedTintTransform
+from src.plates.yolo.dataloader import PlatesDataset
 from ultralytics import YOLO
 
 def pop_yaml():
-    dotenv.load_dotenv()
+    load_dotenv()
     path_ = os.getenv("PATH_")
     with open("config.yaml", "w") as f:
         f.write(f"train: {path_}images/train\n")
@@ -18,6 +21,7 @@ def clean_yaml():
     pass
 
 def main():
+    
     model = YOLO("yolov8n.pt")
     res = model.train(
         data = 'config.yaml',
@@ -26,13 +30,13 @@ def main():
         device='cuda'
     )
     metrics = model.val()
-    results = model("./teste1.jpg")
-    results[0].show()
-
     model.export(format='onnx')
 
 if __name__ == "__main__":
+    clean_yaml()
     pop_yaml()
     main()
-    #clean_yaml()
-    
+
+
+
+
