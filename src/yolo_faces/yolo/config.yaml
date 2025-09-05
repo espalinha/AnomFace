@@ -1,0 +1,4 @@
+train: /home/espala/AnomFace-main/data/widerface/dataset/images/train
+val: /home/espala/AnomFace-main/data/widerface/dataset/images/val
+nc: 1
+names: ['face']

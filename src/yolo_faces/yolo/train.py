@@ -7,13 +7,10 @@ def pop_yaml():
     dotenv.load_dotenv()
     path_ = os.getenv("PATH_")
     with open("config.yaml", "w") as f:
-        f.write("")
-
-    with open("config.yaml", "w") as f:
-        f.write(f"train: {path_}/train/images\n")
-        f.write(f"val: {path_}/val/images\n")
-        f.write(f"nc: 2\n")
-        f.write(f"names: ['face', 'plate']\n")
+        f.write(f"train: {path_}/images/train\n")
+        f.write(f"val: {path_}/images/val\n")
+        f.write(f"nc: 1\n")
+        f.write(f"names: ['face']\n")
     pass
 
 def clean_yaml():
@@ -22,18 +19,21 @@ def clean_yaml():
     pass
 
 def main():
-    model = YOLO("/home/espala/AnomFace-main/src/yolo/yolo11l.pt")
+    model = YOLO("yolov8n.pt")
     res = model.train(
         data = 'config.yaml',
-        epochs = 50,
+        epochs = 100,
         imgsz=640,
-        device='cuda',
-        batch=2,
-        lr0=0.0005
+        device='cuda'
     )
+    metrics = model.val()
+    results = model("./teste1.jpg")
+    results[0].show()
+
+    model.export(format='onnx')
 
 if __name__ == "__main__":
     pop_yaml()
     main()
-    clean_yaml()
+    #clean_yaml()
     
