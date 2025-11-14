@@ -37,7 +37,7 @@ from torchvision import transforms
 class WiderFaceDataset(Dataset):
     def __init__(self):
         dotenv.load_dotenv()
-        img_path = os.getenv("TRAIN")
+        img_path = os.getenv("PRE_TRAIN")
         anom_path = os.getenv("TRAIN_ANNOT")
         #img_path = os.getenv("TRAIN_YOLO")
         #anom_path = os.getenv("TRAIN_ANNOT_YOLO")

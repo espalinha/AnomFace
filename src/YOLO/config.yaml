@@ -1,0 +1,4 @@
+train: /home/espala/AnomFace-main/data/temp/balanced/train
+val: /home/espala/AnomFace-main/data/temp/balanced/val
+nc: 2
+names: ['face', 'plate']
